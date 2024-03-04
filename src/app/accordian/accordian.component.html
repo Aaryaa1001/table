@@ -1,0 +1,73 @@
+<!-- <p>accordian works!</p> -->
+<div class="topbtncss">
+    <div class="topbtncss1">
+        <button mat-stroked-button 
+        color="primary" 
+        class="log-button" (click)="logbtn()">LogOut</button>
+
+    </div>
+
+</div>
+
+<form [formGroup]="form">
+	<mat-accordion class="example-headers-align">
+		<mat-expansion-panel *ngFor="let d of data; index as i"
+			[expanded]="form.value.selected && form.value.selected.id === d.id" (opened)="setStep(d)" hideToggle>
+			<mat-expansion-panel-header>
+        <mat-radio-button [checked]="form.value.selected && form.value.selected.id === d.id" disableRipple>
+          <span>{{ d.title }}</span>
+
+          <!-- <button mat-raised-button matTooltip="Info about the action"
+                  aria-label="Button that displays a tooltip with a customized delay in showing and hiding"
+                  (click)="noop($event)"
+                  container="body">
+            info
+          </button>
+
+          <button type="button"  mat-raised-button placement="bottom bottom-left bottom-right" container="body"
+            ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on bottom" (click)="noop($event)">
+            info
+          </button> -->
+        </mat-radio-button>
+			</mat-expansion-panel-header>
+
+			<div>
+				<!-- name: {{ d.name }}<br>
+                Designation :{{d.title}}<br>
+                Company :{{d.company}}<br> -->
+
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">TITLE</th>
+                        <th scope="col">COMPANY</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">{{d.id}}</th>
+                        <td>{{d.name}}</td>
+                        <td>{{d.title}}</td>
+                        <td>{{d.company}}</td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+
+
+			</div>
+		</mat-expansion-panel>
+	</mat-accordion>
+    <div>
+    <!-- <mat-button (click)="submitbtn()">Submit</mat-button> -->
+    <div class="btnclass">
+    <button mat-stroked-button 
+color="primary" 
+class="common-button" (click)="submitbtn()">Submit</button>
+</div>
+</div>
+	<!-- <pre class="mt-3">{{ form.value  | json }}</pre> -->
+</form>
+

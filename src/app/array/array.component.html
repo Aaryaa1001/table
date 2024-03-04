@@ -1,0 +1,54 @@
+<!-- <div class="container-fluid">
+    <h1> Angular Form Array Example</h1>
+    <form class="form" [formGroup]="form">
+      <div class="container">
+        <div formArrayName="skills">
+          <div *ngFor="let skill of skills.controls;let i=index" >
+            <div [formGroupName]="i">
+              <input type="checkbox" (click)="check(i)" formControlName="checked" /> {{skill.get('name')?.value}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container">
+      {{this.form.getRawValue() | json}}
+    </div>
+  </div> -->
+
+
+  <form [formGroup]="productionForm">
+    <table *ngFor="let group of prodData.groups; let i = index">
+      <thead>
+        <th class="group-name">
+          <span>{{group.name}}</span>
+        </th>
+        <th>Beginning Tally</th>
+        <th>Ending Tally</th>
+        <th>Total</th>
+      </thead>
+  
+      <tbody formArrayName="production">
+        <tr *ngFor="let product of group.products; let j=index" [formGroupName]="i + j">
+          <td>{{product.name}}</td>
+          
+          <td>
+            <input type="number" formControlName="begTally">
+          </td>
+  
+          <td>
+            <input type="number" formControlName="endTally">
+          </td>
+  
+          <td>
+            {{ product.begTally + product.endTally }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+  
+  {{ productionForm.value | json }}

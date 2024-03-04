@@ -1,0 +1,43 @@
+
+
+
+
+    <!-- <table class="table">
+      <tr *ngFor="let row of rows; let i = index">
+        <td *ngFor="let column of columns; let j = index">
+          <input [formControl]="getFormControl(i, column)" />
+        </td>
+      </tr>
+    </table> -->
+
+<div class="maindiv">
+    <div class="innerdiv">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">S.NO</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Tag</th>
+            <th scope="col">Brand</th>
+          </tr>
+        </thead>
+        <tbody class="tablebodycss">
+          <tr 
+          *ngFor="let obj of arr1; let i = index;">
+            <th scope="row">{{i+1}}</th>
+            <td> <input  placeholder="Item name"></td>
+            <td> <input placeholder="Item description"></td>
+            <td><input  placeholder="Item price"></td>
+            <td> <input placeholder="Item tag"></td>
+            <td> <input  placeholder="Item brand"></td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+    </div>
+
+
+ 

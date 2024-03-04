@@ -1,0 +1,85 @@
+<div class="topbtncss">
+    <div class="topbtncss1">
+        <button mat-stroked-button 
+        color="primary" 
+        class="log-button" (click)="logbtn()">LogOut</button>
+
+    </div>
+
+</div>
+
+<form [formGroup]="productionForm">
+	<mat-accordion class="example-headers-align">
+		<mat-expansion-panel *ngFor="let group of prodData.groups; let i = index"
+			[expanded]="form.value.selected && form.value.selected.disc === group.disc" (opened)="setStep(group)" hideToggle>
+			<mat-expansion-panel-header>
+        <mat-radio-button [checked]="productionForm.value.selected && productionForm.value.selected.id === group.id" disableRipple>
+          <span>{{ group.disc }}</span>
+
+        </mat-radio-button>
+			</mat-expansion-panel-header>
+
+			<div>
+
+
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">NAME</th>
+                        <th scope="col">VALUE</th>
+                        <th scope="col">IS_REQUIRED</th>
+                        <th scope="col">IS_SHOW</th>
+                      </tr>
+                    </thead>
+                    <tbody formArrayName="production">
+                      <tr *ngFor="let product of group.keysList; let j=index" [formGroupName]="i + j">
+                        <td>{{product.KEY_NAME}}</td>
+                        <td>{{product.KEY_VALUE}}</td>
+                        <td><mat-slide-toggle
+                            (change)="onChange($event,i,j,'IS_REQUIRED')"
+                            [checked]="product.IS_REQUIRED == 'Y'"
+                            FormControl='IS_REQUIRED'
+                         >
+                         {{product.IS_REQUIRED}}
+                         </mat-slide-toggle></td>
+                        <td><mat-slide-toggle
+                            (change)="onChange($event,i,j,'IS_SHOW')"
+                            [checked]="product.IS_SHOW == 'Y'"
+                            FormControl='IS_SHOW'
+                         >
+                         {{product.IS_SHOW}}
+                         </mat-slide-toggle></td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+
+
+			</div>
+
+            <div class="btnclass">
+                <button mat-stroked-button 
+            color="primary" 
+            class="common-button" (click)="savebtn(i)">Save</button>
+            </div>
+		</mat-expansion-panel>
+	</mat-accordion>
+    
+    <div>
+
+    <div class="btnclass">
+    <button mat-stroked-button 
+color="primary" 
+class="common-button" (click)="submitbtn()">Submit</button>
+</div>
+</div>
+	
+</form>
+
+
+
+
+
+ 
+
+

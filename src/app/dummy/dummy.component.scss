@@ -1,0 +1,42 @@
+::ng-deep .mat-checkbox-inner-container {
+    margin: 0px 8px 0 0;
+    transform: translateY(2px);
+  }
+  
+  mat-radio-button {
+    width: 100%;
+  }
+  
+  ::ng-deep .mat-radio-label .mat-radio-label-content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .common-button {
+    border-radius: 4px;
+    line-height: 2.5;
+    margin-left: 45%;
+    margin-top: 5%;
+  }
+
+  .btnclass{
+    color:white
+
+  }
+
+  .log-button{
+    border-radius: 4px;
+    line-height: 2.5;
+  }
+
+  .topbtncss{
+    width:100%;
+    height: 50px;
+  }
+
+  .topbtncss1{
+    float:right
+  }
+

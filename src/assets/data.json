@@ -1,0 +1,22 @@
+{
+    "data":[
+        {
+            "name":"aaryaa",
+            "id":"aaryaa@gmail.com",
+            "location":"chennai"
+        },
+        {
+            "name":"shauryaa",
+            "id":"shauryaa@gmail.com",
+            "location":"chennai"
+        },
+        {
+            "name":"mauryaa",
+            "id":"mauryaa@gmail.com",
+            "location":"chennai"
+        }
+    ],
+    "status":"200",
+    "message":"success"
+    
+}
